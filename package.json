@@ -1,0 +1,19 @@
+{
+  "name": "uapbot",
+  "version": "0.1.0",
+  "description": "An irc bot for that parses user agent strings thrown at it.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jerk":    ">= 1.1.23",
+    "ua-parser":    "x.x.x"
+  },
+  "author": "Tobie Langel <tobie.langel@gmail.com> (http://tobielangel.com)",
+  "license": "Apache 2.0",
+  "engines": {
+    "node": "0.8.x",
+    "npm":  "1.1.x"
+  }
+}

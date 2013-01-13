@@ -1,0 +1,12 @@
+{
+  "server": "irc.freenode.net",
+  "nick": "uapbot",
+  "channels": [ "#ua-parser" ],
+  "user":
+    {
+      "username": "uapbot",
+      "hostname": "home",
+      "servername": "home",
+      "realname": "UAPBOT"
+    }
+}
