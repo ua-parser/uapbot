@@ -13,4 +13,4 @@ So for example:
 
 will print:
 
-   yournick: User Agent: Blackberry WebKit 7.1.0; Operating System: BlackBerry OS 7.1.0.398; Device: BlackBerry 9320.
+    yournick: User Agent: Blackberry WebKit 7.1.0; Operating System: BlackBerry OS 7.1.0.398; Device: BlackBerry 9320.
