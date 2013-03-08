@@ -1,9 +1,13 @@
 var jerk = require("jerk");
 var fs = require("fs");
 var url = require("url");
-var options = JSON.parse(fs.readFileSync("./options.json"));
-var PACKAGE_INFO = JSON.parse(fs.readFileSync("./node_modules/ua-parser/package.json"));
 var uap = require("ua-parser");
+
+var OPTIONS = JSON.parse(fs.readFileSync("./options.json"));
+var PACKAGE_INFO = JSON.parse(fs.readFileSync("./node_modules/ua-parser/package.json"));
+var README = fs.readFileSync("./README.md").split(/\n=+\s*\n+/);
+README.shift();
+README = README.join("\n");
 
 function parse(str) {
   var out = '',
@@ -23,9 +27,13 @@ jerk(function(j) {
       case "-v":
         out = "ua-parser v" + PACKAGE_INFO.version;
         break;
+      case "--help":
+      case "-h":
+        out = README;
+        break;
       default:
         out = parse(str);
     }
     message.say(message.user + ": " + out);
   });
-}).connect(options);
+}).connect(OPTIONS);
