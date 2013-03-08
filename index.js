@@ -5,7 +5,7 @@ var uap = require("ua-parser");
 
 var OPTIONS = JSON.parse(fs.readFileSync("./options.json"));
 var PACKAGE_INFO = JSON.parse(fs.readFileSync("./node_modules/ua-parser/package.json"));
-var README = fs.readFileSync("./README.md").split(/\n=+\s*\n+/);
+var README = fs.readFileSync("./README.md", "utf8").split(/\n=+\s*\n+/);
 README.shift();
 README = README.join("\n");
 
@@ -19,7 +19,7 @@ function parse(str) {
 }
 
 jerk(function(j) {
-  j.watch_for(new RegExp("^" + options.nick + ":\\s+(.*)$", "i"), function(message) {
+  j.watch_for(new RegExp("^" + OPTIONS.nick + ":\\s+(.*)$", "i"), function(message) {
     var str = message.match_data[1].trim(),
         out = '';
     switch (str) {
