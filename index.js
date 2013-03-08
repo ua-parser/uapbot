@@ -8,8 +8,7 @@ var uap = require("ua-parser");
 function parse(str) {
   var out = '',
       r = uap.parse(str);
-  out += message.user 
-  out += ": User Agent: " + r.userAgent;
+  out += "User Agent: " + r.userAgent;
   out += "; Operating System: " + r.os;
   out += "; Device: " + r.device + ".";
   return out;
@@ -17,14 +16,16 @@ function parse(str) {
 
 jerk(function(j) {
   j.watch_for(new RegExp("^" + options.nick + ":\\s+(.*)$", "i"), function(message) {
-    var str = message.match_data[1].trim();
+    var str = message.match_data[1].trim(),
+        out = '';
     switch (str) {
       case "--version":
       case "-v":
-        message.say("ua-parser v" + PACKAGE_INFO.version);
+        out = "ua-parser v" + PACKAGE_INFO.version;
         break;
       default:
-        message.say(parse(str));
+        out = parse(str);
     }
+    message.say(message.user + ": " + out);
   });
 }).connect(options);
