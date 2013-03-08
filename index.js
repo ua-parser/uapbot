@@ -21,7 +21,7 @@ jerk(function(j) {
     switch (str) {
       case "--version":
       case "-v":
-        message.say("ua-parser version" + PACKAGE_INFO.version);
+        message.say("ua-parser v" + PACKAGE_INFO.version);
         break;
       default:
         message.say(parse(str));
