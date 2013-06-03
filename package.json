@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "jerk":    ">= 1.1.23",
-    "ua-parser":    "0.3.2"
+    "ua-parser":    "0.3.3"
   },
   "author": "Tobie Langel <tobie.langel@gmail.com> (http://tobielangel.com)",
   "license": "Apache 2.0",
